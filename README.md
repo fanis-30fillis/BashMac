@@ -1,4 +1,4 @@
-# MacChanger
+# BashMac
 
 Simple Bash Mac Changer.
 The options are:
