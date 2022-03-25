@@ -89,7 +89,7 @@ set_mac () {
 }
 
 print_help_and_exit () {
-	echo "Usage: randomac.sh -i <interface> [OPTIONS] "
+	echo "Usage: bashmac.sh -i <interface> [OPTIONS] "
 	echo
 	echo "The Script Needs Root Priviledges to Run"
 	echo "OPTIONS:"
