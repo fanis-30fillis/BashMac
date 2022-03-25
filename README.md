@@ -1,6 +1,6 @@
 # BashMac
 
-Simple Bash Mac Changer.
+Simple Bash MAC Address Changer.
 The options are:
 
 |Command           |Description                                                   |
