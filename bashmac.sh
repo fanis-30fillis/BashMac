@@ -96,8 +96,6 @@ print_help_and_exit () {
     echo "    -i|--interface"
 	echo "        Sets the interface to change the MAC address. This"
 	echo "        option is required"
-	echo "    -r|--random-oui"
-	echo "        Sets a completely random oui. This is default behaviour"
 	echo "    -m|--mac <MAC>"
 	echo "        Sets the given MAC as the interface MAC"
 	echo "    -o|--oui <OUI>"
@@ -124,7 +122,6 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 interface=""
-random_oui=1
 random_vendor=0
 mac=""
 vendor=""
@@ -133,11 +130,6 @@ vendor=""
 while [[ $# -gt 0 ]]; do
 	key="$1"
 	case $key in
-        # TODO implement
-		-r|--random-oui)
-			random_oui=1
-			shift # past argument
-			;;
 		-m|--mac)
 			mac="$2"
 			shift # past argument
@@ -145,19 +137,16 @@ while [[ $# -gt 0 ]]; do
 			;;
 		-o|--oui)
 			oui="$2"
-			random_oui=0
 			shift # past argument
 			shift # past value
 			;;
 		-v|--vendor)
 			vendor="$2"
-			random_oui=0
 			shift # past argument
 			shift # past value
 			;;
 		-V|--random-vendor)
 			random_vendor=1
-			random_oui=0
 			shift # past argument
 			;;
 		-i|--interface)
